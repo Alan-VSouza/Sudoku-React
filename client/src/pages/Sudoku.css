@@ -1,0 +1,117 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sudoku-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.sudoku-container h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+  background-color: #000;
+  width: calc(60px * 9 + 20px);
+  height: calc(60px * 9 + 20px);
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sudoku-cell {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 4px;
+}
+
+.sudoku-cell:focus {
+  background-color: #e0f7fa;
+  outline: none;
+  transform: scale(1.1);
+}
+
+.sudoku-cell:read-only {
+  background-color: #f0f0f0;
+}
+
+.sudoku-cell.highlight {
+  background-color: #ffeb3b;
+}
+
+.sudoku-cell.invalid {
+  background-color: #ff6961;
+  color: white;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.error-counter, .score-counter {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.error-counter {
+  color: #ff6961;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #45a049;
+}

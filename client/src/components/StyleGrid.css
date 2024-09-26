@@ -1,0 +1,68 @@
+.sudoku-cell {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.sudoku-cell.original {
+  background-color: #e0e0e0;
+}
+
+.sudoku-cell.invalid {
+  background-color: red;
+  color: white;
+  animation: shake 0.3s;
+}
+
+.sudoku-cell.different {
+  background-color: rgb(48, 143, 0);
+  color: white;
+}
+
+.sudoku-cell.highlight {
+  background-color: #89edff !important;
+  color: black;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.validation-errors, .error-counter, .score {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.validation-errors {
+  color: red;
+}
+
+.error-counter {
+  color: #ff6961;
+}
+
+.score {
+  color: #008a20;
+}
+
+.logout-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #0056b3;
+}
